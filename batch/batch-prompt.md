@@ -296,7 +296,7 @@ Formato TSV (una sola línea, sin header, 9 columnas tab-separated):
 | 8 | report | md link | `[647](reports/647-...)` | Link al report |
 | 9 | notes | string | `APPLY HIGH...` | Resumen 1 frase |
 
-**IMPORTANTE:** El orden TSV tiene status ANTES de score (col 5→status, col 6→score). En applications.md el orden es inverso (col 5→score, col 6→status). merge-tracker.mjs maneja la conversión.
+**IMPORTANT:** TSV has status before score (col 5→status, col 6→score). applications.md also has status before score (col 2→status, col 6→score). merge-tracker.mjs handles the column mapping.
 
 **Estados canónicos válidos:** `Evaluada`, `Aplicado`, `Respondido`, `Entrevista`, `Oferta`, `Rechazado`, `Descartado`, `NO APLICAR`
 

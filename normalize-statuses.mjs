@@ -23,9 +23,13 @@ const APPS_FILE = existsSync(join(CAREER_OPS, 'data/applications.md'))
 const DRY_RUN = process.argv.includes('--dry-run');
 
 // Canonical status mapping
+function stripStatusEmoji(s) {
+  return s.replace(/^[✅🟡❌🔴🟢]\s*/, '').trim();
+}
+
 function normalizeStatus(raw) {
-  // Strip markdown bold
-  let s = raw.replace(/\*\*/g, '').trim();
+  // Strip markdown bold and emoji prefix
+  let s = stripStatusEmoji(raw).replace(/\*\*/g, '').trim();
   const lower = s.toLowerCase();
 
   // DUPLICADO variants → Descartado
@@ -109,14 +113,14 @@ for (let i = 0; i < lines.length; i++) {
   if (!line.startsWith('|')) continue;
 
   const parts = line.split('|').map(s => s.trim());
-  // Format: ['', '#', 'fecha', 'empresa', 'rol', 'score', 'STATUS', 'pdf', 'report', 'notas', '']
+  // Format: ['', '#', 'STATUS', 'date', 'company', 'role', 'score', 'pdf', 'report', 'notes', '']
   if (parts.length < 9) continue;
   if (parts[1] === '#' || parts[1] === '---' || parts[1] === '') continue;
 
   const num = parseInt(parts[1]);
   if (isNaN(num)) continue;
 
-  const rawStatus = parts[6];
+  const rawStatus = parts[2];
   const result = normalizeStatus(rawStatus);
 
   if (result.unknown) {
@@ -128,7 +132,7 @@ for (let i = 0; i < lines.length; i++) {
 
   // Apply change
   const oldStatus = rawStatus;
-  parts[6] = result.status;
+  parts[2] = result.status;
 
   // Move DUPLICADO info to notes if needed
   if (result.moveToNotes && parts[9]) {
@@ -141,8 +145,8 @@ for (let i = 0; i < lines.length; i++) {
   }
 
   // Also strip bold from score field
-  if (parts[5]) {
-    parts[5] = parts[5].replace(/\*\*/g, '');
+  if (parts[6]) {
+    parts[6] = parts[6].replace(/\*\*/g, '');
   }
 
   // Reconstruct line

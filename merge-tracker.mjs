@@ -31,8 +31,20 @@ const VERIFY = process.argv.includes('--verify');
 // Canonical states and aliases
 const CANONICAL_STATES = ['Evaluada', 'Aplicado', 'Respondido', 'Entrevista', 'Oferta', 'Rechazado', 'Descartado', 'NO APLICAR'];
 
+function stripStatusEmoji(s) {
+  return s.replace(/^[✅🟡❌🔴🟢]\s*/, '').trim();
+}
+
+function statusWithEmoji(status) {
+  const s = status.toLowerCase();
+  if (['applied', 'interview', 'responded', 'offer'].includes(s)) return `✅ ${status}`;
+  if (['evaluated'].includes(s)) return `🟡 ${status}`;
+  if (['rejected', 'discarded', 'skip', 'no aplicar'].includes(s)) return `❌ ${status}`;
+  return status;
+}
+
 function validateStatus(status) {
-  const clean = status.replace(/\*\*/g, '').replace(/\s+\d{4}-\d{2}-\d{2}.*$/, '').trim();
+  const clean = stripStatusEmoji(status).replace(/\*\*/g, '').replace(/\s+\d{4}-\d{2}-\d{2}.*$/, '').trim();
   const lower = clean.toLowerCase();
 
   for (const valid of CANONICAL_STATES) {
@@ -85,8 +97,8 @@ function parseAppLine(line) {
   const num = parseInt(parts[1]);
   if (isNaN(num) || num === 0) return null;
   return {
-    num, date: parts[2], company: parts[3], role: parts[4],
-    score: parts[5], status: parts[6], pdf: parts[7], report: parts[8],
+    num, status: stripStatusEmoji(parts[2]), date: parts[3], company: parts[4], role: parts[5],
+    score: parts[6], pdf: parts[7], report: parts[8],
     notes: parts[9] || '', raw: line,
   };
 }
@@ -265,7 +277,7 @@ for (const file of tsvFiles) {
       console.log(`🔄 Update: #${duplicate.num} ${addition.company} — ${addition.role} (${oldScore}→${newScore})`);
       const lineIdx = appLines.indexOf(duplicate.raw);
       if (lineIdx >= 0) {
-        const updatedLine = `| ${duplicate.num} | ${addition.date} | ${addition.company} | ${addition.role} | ${addition.score} | ${duplicate.status} | ${duplicate.pdf} | ${addition.report} | Re-eval ${addition.date} (${oldScore}→${newScore}). ${addition.notes} |`;
+        const updatedLine = `| ${duplicate.num} | ${statusWithEmoji(duplicate.status)} | ${addition.date} | ${addition.company} | ${addition.role} | ${addition.score} | ${duplicate.pdf} | ${addition.report} | Re-eval ${addition.date} (${oldScore}→${newScore}). ${addition.notes} |`;
         appLines[lineIdx] = updatedLine;
         updated++;
       }
@@ -278,7 +290,7 @@ for (const file of tsvFiles) {
     const entryNum = addition.num > maxNum ? addition.num : ++maxNum;
     if (addition.num > maxNum) maxNum = addition.num;
 
-    const newLine = `| ${entryNum} | ${addition.date} | ${addition.company} | ${addition.role} | ${addition.score} | ${addition.status} | ${addition.pdf} | ${addition.report} | ${addition.notes} |`;
+    const newLine = `| ${entryNum} | ${statusWithEmoji(addition.status)} | ${addition.date} | ${addition.company} | ${addition.role} | ${addition.score} | ${addition.pdf} | ${addition.report} | ${addition.notes} |`;
     newLines.push(newLine);
     added++;
     console.log(`➕ Add #${entryNum}: ${addition.company} — ${addition.role} (${addition.score})`);

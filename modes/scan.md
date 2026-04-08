@@ -89,23 +89,28 @@ Levels are additive — all run, results are merged and deduplicated.
    - `applications.md` → normalized company + role already evaluated
    - `pipeline.md` → exact URL already in pending or processed
 
-7.5. **Verify liveness of WebSearch results (Level 3)** — BEFORE adding to pipeline:
+7.5. **Verify liveness — ALL results** — BEFORE adding to pipeline:
 
-   WebSearch results may be stale (Google caches results for weeks or months). To avoid evaluating expired offers, verify each new URL from Level 3 with Playwright. Levels 1 and 2 are inherently real-time and do not require this check.
+   Greenhouse API results can be stale (closed roles linger in the API). WebSearch results may be weeks old. Verify every new URL that passed dedup, regardless of source level.
 
-   For each new Level 3 URL (sequential — NEVER Playwright in parallel):
-   a. `browser_navigate` to the URL
-   b. `browser_snapshot` to read the content
-   c. Classify:
-      - **Active**: job title visible + role description + Apply/Submit button
-      - **Expired** (any of these signals):
-        - Final URL contains `?error=true` (Greenhouse redirect when offer is closed)
-        - Page contains: "job no longer available" / "no longer open" / "position has been filled" / "this job has expired" / "page not found"
-        - Only navbar and footer visible, no JD content (content < ~300 chars)
-   d. If expired: record in `scan-history.tsv` with status `skipped_expired` and discard
-   e. If active: continue to step 8
+   **Primary method: WebFetch** (fast, no browser needed, works in all contexts):
+   For each new URL (can run in parallel batches of 5-10):
+   a. `WebFetch` the URL
+   b. Classify as **Expired** if ANY of:
+      - Final URL contains `?error=true` (Greenhouse closed-job redirect)
+      - Response contains: "job no longer available" / "no longer open" / "position has been filled" / "this job has expired" / "page not found" / "this role is no longer accepting applications"
+      - Response body is < 500 characters (navbar/footer only, no JD content)
+      - HTTP 404 or redirect to a generic jobs listing page
+   c. Classify as **Active** if:
+      - Job title + role description visible in response
+      - Apply/Submit button or application link present
+   d. If expired: record `skipped_expired` in scan-history.tsv and discard
+   e. If active: proceed to step 8
 
-   **Do not abort the entire scan if one URL fails.** If `browser_navigate` errors (timeout, 403, etc.), mark as `skipped_expired` and continue with the next.
+   **Fallback: Playwright** (if WebFetch is ambiguous or blocked):
+   Use `browser_navigate` + `browser_snapshot` for any URL where WebFetch returned unclear results. Run sequentially — NEVER Playwright in parallel.
+
+   **Do not abort the scan if one URL fails.** On timeout or error, mark `skipped_expired` and continue.
 
 8. **For each verified new offer that passes filters**:
    a. Add to `pipeline.md` "Pending" section: `- [ ] {url} | {company} | {title}`

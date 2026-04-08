@@ -65,8 +65,8 @@ for (const line of lines) {
   const num = parseInt(parts[1]);
   if (isNaN(num)) continue;
   entries.push({
-    num, date: parts[2], company: parts[3], role: parts[4],
-    score: parts[5], status: parts[6], pdf: parts[7], report: parts[8],
+    num, status: parts[2].replace(/^[✅🟡❌🔴🟢]\s*/, '').trim(), date: parts[3], company: parts[4], role: parts[5],
+    score: parts[6], pdf: parts[7], report: parts[8],
     notes: parts[9] || '',
   });
 }
@@ -144,7 +144,7 @@ if (badScores === 0) ok('All scores valid');
 let badRows = 0;
 for (const line of lines) {
   if (!line.startsWith('|')) continue;
-  if (line.includes('---') || line.includes('Empresa')) continue;
+  if (line.includes('---') || line.includes('Company')) continue;
   const parts = line.split('|');
   if (parts.length < 9) {
     error(`Row with <9 columns: ${line.substring(0, 80)}...`);

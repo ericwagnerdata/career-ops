@@ -56,6 +56,10 @@ function roleMatch(a, b) {
   return overlap.length >= 2;
 }
 
+function stripStatusEmoji(s) {
+  return s.replace(/^[✅🟡❌🔴🟢]\s*/, '').trim();
+}
+
 function parseScore(s) {
   const m = s.replace(/\*\*/g, '').match(/([\d.]+)/);
   return m ? parseFloat(m[1]) : 0;
@@ -68,11 +72,11 @@ function parseAppLine(line) {
   if (isNaN(num)) return null;
   return {
     num,
-    date: parts[2],
-    company: parts[3],
-    role: parts[4],
-    score: parts[5],
-    status: parts[6],
+    status: stripStatusEmoji(parts[2]),
+    date: parts[3],
+    company: parts[4],
+    role: parts[5],
+    score: parts[6],
     pdf: parts[7],
     report: parts[8],
     notes: parts[9] || '',
@@ -155,7 +159,7 @@ for (const [company, companyEntries] of groups) {
       const lineIdx = entryLineMap.get(keeper.num);
       if (lineIdx !== undefined) {
         const parts = lines[lineIdx].split('|').map(s => s.trim());
-        parts[6] = bestStatus;
+        parts[2] = bestStatus;
         lines[lineIdx] = '| ' + parts.slice(1, -1).join(' | ') + ' |';
         console.log(`  📝 #${keeper.num}: status promoted to "${bestStatus}" (from #${cluster.find(e => e.status === bestStatus)?.num})`);
       }

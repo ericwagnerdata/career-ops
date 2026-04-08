@@ -257,7 +257,7 @@ Write one TSV file per evaluation to `batch/tracker-additions/{num}-{company-slu
 8. `report` -- markdown link `[num](reports/...)`
 9. `notes` -- one-line summary
 
-**Note:** In applications.md, score comes BEFORE status. The merge script handles this column swap automatically.
+**Note:** In applications.md, Status is column 2 (immediately after #) and Score is column 6. TSV column order (status col 5, score col 6) maps to this layout — merge-tracker.mjs handles the translation.
 
 ### Pipeline Integrity
 
