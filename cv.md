@@ -6,7 +6,7 @@ Tampa, FL | (561) 789-1359 | EricCWag@Gmail.com | [LinkedIn](https://linkedin.co
 
 ## Summary
 
-Staff Analyst with 8+ years of analytics engineering experience. Built the analytics foundation Peloton's quality organization runs on: dbt models, ETL pipelines, metric layers, and self-service analytics that eliminated the data middleman across warranty, safety, and compliance. Previously at Lockheed Martin, supporting a 1,000+ person organization and founding the data community that spread standards beyond the immediate team. Bridges the full data stack from pipeline and modeling to dashboards and analysis. Comfortable with ambiguity, LLMs and AI tooling in the daily workflow, and owning foundational decisions.
+Staff Analyst with 8+ years building the metric infrastructure that product orgs run on. At Peloton, authored the company's first enterprise data dictionary, designed self-service tooling that made non-technical stakeholders independent, and architected the dbt transformation layers monitoring $10M+ in operational spend. At Lockheed Martin, enabled a 1,000+ person organization to shift to evidence-based decisions and founded the data community that spread analytical standards beyond the immediate team. Comfortable with ambiguity, cross-functional influence, and integrating LLMs into daily analytical work.
 
 ---
 
@@ -32,7 +32,8 @@ Staff Analyst with 8+ years of analytics engineering experience. Built the analy
 - Scaled analytics adoption and technical mentorship across the organization by founding bi-weekly Data Office Hours and a Community of Practice for data practitioners
 
 **Operations Leadership Development Program (OLDP)** | *Jul 2018 – Jul 2021*
-- Reduced per-defect engineering investigation time by 100+ hours by automating data ingestion and analysis workflows from AOI machine data using Alteryx
+
+- Reduced per-defect engineering investigation time by 100+ hours by automating data ingestion and analysis workflows from optical inspection machine data
 - Saved 25+ hours per week across engineering and supervisory teams by building the site's first Tableau dashboards and Excel-to-SAP data automation pipelines
 - Eliminated 3,500+ operational hours annually by spearheading robotic process automation across core business workflows
 - Ensured delivery performance and quality compliance by managing $30M in supplier contracts across F-35, C-130, C-5, F-16, and F-22 programs
@@ -49,20 +50,7 @@ Staff Analyst with 8+ years of analytics engineering experience. Built the analy
 
 ## Skills
 
-**Query & Modeling:** SQL, dbt, Python  
-**Platforms & Warehouses:** Airflow, Snowflake, BigQuery, Redshift  
-**BI & Visualization:** Tableau, Looker, Alteryx  
-**Tooling:** Git/GitHub, LLM-augmented workflows  
-
----
-
-## Certifications
-
-- Tableau Certified Data Analyst (May 2023)
-- Alteryx Designer Core Certification (Dec 2021)
-- Tableau Desktop Qualified Associate (Aug 2021)
-- Lean Six Sigma Green Belt — Lockheed Martin (May 2019)
-- Make Level 1 - Foundation (Mar 2023)
+SQL | dbt | Python | Looker | Tableau | Alteryx | Airflow | BigQuery | Redshift | Git/GitHub | Claude Code
 
 ---
 
