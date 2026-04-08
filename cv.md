@@ -1,6 +1,6 @@
 # Eric C. Wagner
 
-Tampa, FL | (561) 789-1359 | EricCWag@Gmail.com | [LinkedIn](https://linkedin.com/in/ECWagner) | [GitHub](https://github.com/ericwagnergithub)
+Tampa, FL | (561) 789-1359 | EricCWag@Gmail.com | [LinkedIn](https://linkedin.com/in/ECWagner) | [GitHub](https://github.com/ericwagnerdata)
 
 ---
 
