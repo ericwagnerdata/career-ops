@@ -29,7 +29,9 @@ const DRY_RUN = process.argv.includes('--dry-run');
 const VERIFY = process.argv.includes('--verify');
 
 // Canonical states and aliases
-const CANONICAL_STATES = ['Evaluada', 'Aplicado', 'Respondido', 'Entrevista', 'Oferta', 'Rechazado', 'Descartado', 'NO APLICAR'];
+const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP',
+  // Legacy Spanish (kept for backwards compat)
+  'Evaluada', 'Aplicado', 'Respondido', 'Entrevista', 'Oferta', 'Rechazado', 'Descartado', 'NO APLICAR'];
 
 function stripStatusEmoji(s) {
   return s.replace(/^[✅🟡❌🔴🟢]\s*/, '').trim();
@@ -37,9 +39,9 @@ function stripStatusEmoji(s) {
 
 function statusWithEmoji(status) {
   const s = status.toLowerCase();
-  if (['applied', 'interview', 'responded', 'offer'].includes(s)) return `✅ ${status}`;
-  if (['evaluated'].includes(s)) return `🟡 ${status}`;
-  if (['rejected', 'discarded', 'skip', 'no aplicar'].includes(s)) return `❌ ${status}`;
+  if (['applied', 'interview', 'responded', 'offer', 'aplicado', 'entrevista', 'respondido', 'oferta'].includes(s)) return `✅ ${status}`;
+  if (['evaluated', 'evaluada'].includes(s)) return `🟡 ${status}`;
+  if (['rejected', 'discarded', 'skip', 'no aplicar', 'rechazado', 'descartado'].includes(s)) return `❌ ${status}`;
   return status;
 }
 
@@ -53,12 +55,24 @@ function validateStatus(status) {
 
   // Aliases
   const aliases = {
-    'enviada': 'Aplicado', 'aplicada': 'Aplicado', 'applied': 'Aplicado', 'sent': 'Aplicado',
-    'cerrada': 'Descartado', 'descartada': 'Descartado', 'cancelada': 'Descartado',
-    'rechazada': 'Rechazado',
-    'no aplicar': 'NO APLICAR', 'no_aplicar': 'NO APLICAR', 'skip': 'NO APLICAR', 'monitor': 'NO APLICAR',
-    'condicional': 'Evaluada', 'hold': 'Evaluada', 'evaluar': 'Evaluada', 'verificar': 'Evaluada',
-    'geo blocker': 'NO APLICAR',
+    // English
+    'applied': 'Applied', 'sent': 'Applied',
+    'evaluated': 'Evaluated', 'hold': 'Evaluated',
+    'responded': 'Responded',
+    'interview': 'Interview',
+    'offer': 'Offer',
+    'rejected': 'Rejected',
+    'discarded': 'Discarded', 'closed': 'Discarded', 'cancelled': 'Discarded',
+    'skip': 'SKIP', 'no aplicar': 'SKIP', 'no_aplicar': 'SKIP', 'monitor': 'SKIP',
+    // Legacy Spanish
+    'enviada': 'Applied', 'aplicada': 'Applied', 'aplicado': 'Applied',
+    'evaluada': 'Evaluated', 'evaluar': 'Evaluated', 'verificar': 'Evaluated', 'condicional': 'Evaluated',
+    'respondido': 'Responded',
+    'entrevista': 'Interview',
+    'oferta': 'Offer',
+    'rechazada': 'Rejected', 'rechazado': 'Rejected',
+    'cerrada': 'Discarded', 'descartada': 'Discarded', 'descartado': 'Discarded', 'cancelada': 'Discarded',
+    'geo blocker': 'SKIP',
   };
 
   if (aliases[lower]) return aliases[lower];
