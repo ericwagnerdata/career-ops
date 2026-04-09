@@ -17,10 +17,10 @@ If the input is a **URL** (not pasted JD text), use this strategy to extract the
 **If the input is JD text** (not a URL): use it directly, no fetch needed.
 
 ## Step 1 — A-F Evaluation
-Run exactly the same as the `oferta` mode (read `modes/oferta.md` for all A-F blocks).
+Run exactly the same as the `evaluate` mode (read `modes/evaluate.md` for all A-F blocks).
 
 ## Step 2 — Save Report .md
-Save the full evaluation to `reports/{###}-{company-slug}-{YYYY-MM-DD}.md` (see format in `modes/oferta.md`).
+Save the full evaluation to `reports/{###}-{company-slug}-{YYYY-MM-DD}.md` (see format in `modes/evaluate.md`).
 
 ## Step 3 — Generate PDF
 Run the full `pdf` pipeline (read `modes/pdf.md`).
