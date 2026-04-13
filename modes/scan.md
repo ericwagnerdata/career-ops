@@ -41,10 +41,12 @@ For companies on Greenhouse, the JSON API (`boards-api.greenhouse.io/v1/boards/{
 
 The `search_queries` with `site:` filters cover portals broadly (all Ashby, all Greenhouse, etc.). Useful for discovering NEW companies not yet in `tracked_companies`, but results may be stale.
 
-**Execution priority:**
-1. Level 1: Playwright → all `tracked_companies` with `careers_url`
-2. Level 2: API → all `tracked_companies` with `api:`
+**Execution priority (token-optimized):**
+1. Level 2: API → all `tracked_companies` with `api:` defined (fast, cheap JSON)
+2. Level 1: Playwright → only companies WITHOUT `api:` (custom ATS, Ashby, Lever, etc.)
 3. Level 3: WebSearch → all `search_queries` with `enabled: true`
+
+**Key rule:** If a company has `api:` defined, skip Playwright for it entirely — the API is faster, cheaper, and equally reliable.
 
 Levels are additive — all run, results are merged and deduplicated.
 
@@ -54,21 +56,21 @@ Levels are additive — all run, results are merged and deduplicated.
 2. **Read history**: `data/scan-history.tsv` → already-seen URLs
 3. **Read dedup sources**: `data/applications.md` + `data/pipeline.md`
 
-4. **Level 1 — Playwright scan** (parallel in batches of 3-5):
-   For each company in `tracked_companies` with `enabled: true` and a defined `careers_url`:
+4. **Level 2 — Greenhouse APIs** (run FIRST, parallel):
+   For each company in `tracked_companies` with `api:` defined and `enabled: true`:
+   a. WebFetch the API URL → JSON with job list
+   b. For each job extract: `{title, url, company}`, mark source as `api`
+   c. Accumulate in candidate list
+
+5. **Level 1 — Playwright scan** (only for companies WITHOUT `api:`, parallel in batches of 3-5):
+   For each company in `tracked_companies` with `enabled: true`, NO `api:` defined, and a `careers_url`:
    a. `browser_navigate` to the `careers_url`
    b. `browser_snapshot` to read all job listings
    c. If the page has filters/departments, navigate relevant sections
-   d. For each job listing extract: `{title, url, company}`
+   d. For each job listing extract: `{title, url, company}`, mark source as `playwright`
    e. If the page paginates results, navigate additional pages
    f. Accumulate in candidate list
    g. If `careers_url` fails (404, redirect), try `scan_query` as fallback and note the URL needs updating
-
-5. **Level 2 — Greenhouse APIs** (parallel):
-   For each company in `tracked_companies` with `api:` defined and `enabled: true`:
-   a. WebFetch the API URL → JSON with job list
-   b. For each job extract: `{title, url, company}`
-   c. Accumulate in candidate list (dedup with Level 1)
 
 6. **Level 3 — WebSearch queries** (parallel if possible):
    For each query in `search_queries` with `enabled: true`:
@@ -89,9 +91,11 @@ Levels are additive — all run, results are merged and deduplicated.
    - `applications.md` → normalized company + role already evaluated
    - `pipeline.md` → exact URL already in pending or processed
 
-7.5. **Verify liveness — ALL results** — BEFORE adding to pipeline:
+7.5. **Verify liveness — non-API results only** — BEFORE adding to pipeline:
 
-   Greenhouse API results can be stale (closed roles linger in the API). WebSearch results may be weeks old. Verify every new URL that passed dedup, regardless of source level.
+   **Skip verification for `api` source results** — Greenhouse API only returns active roles. Verification is only needed for `playwright` and `websearch` source results, which can be stale.
+
+   WebSearch results may be weeks old. Playwright results are real-time but the specific job URL may 404.
 
    **Primary method: WebFetch** (fast, no browser needed, works in all contexts):
    For each new URL (can run in parallel batches of 5-10):
