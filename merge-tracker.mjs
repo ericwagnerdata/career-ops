@@ -15,7 +15,7 @@
  */
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync, renameSync, existsSync } from 'fs';
-import { join, basename, dirname } from 'path';
+import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const CAREER_OPS = dirname(fileURLToPath(import.meta.url));
@@ -28,10 +28,8 @@ const MERGED_DIR = join(ADDITIONS_DIR, 'merged');
 const DRY_RUN = process.argv.includes('--dry-run');
 const VERIFY = process.argv.includes('--verify');
 
-// Canonical states and aliases
-const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP',
-  // Legacy Spanish (kept for backwards compat)
-  'Evaluada', 'Aplicado', 'Respondido', 'Entrevista', 'Oferta', 'Rechazado', 'Descartado', 'NO APLICAR'];
+// Canonical states
+const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
 
 function stripStatusEmoji(s) {
   return s.replace(/^[✅🟡❌🔴🟢]\s*/, '').trim();
@@ -39,9 +37,9 @@ function stripStatusEmoji(s) {
 
 function statusWithEmoji(status) {
   const s = status.toLowerCase();
-  if (['applied', 'interview', 'responded', 'offer', 'aplicado', 'entrevista', 'respondido', 'oferta'].includes(s)) return `✅ ${status}`;
-  if (['evaluated', 'evaluada'].includes(s)) return `🟡 ${status}`;
-  if (['rejected', 'discarded', 'skip', 'no aplicar', 'rechazado', 'descartado'].includes(s)) return `❌ ${status}`;
+  if (['applied', 'interview', 'responded', 'offer'].includes(s)) return `✅ ${status}`;
+  if (['evaluated'].includes(s)) return `🟡 ${status}`;
+  if (['rejected', 'discarded', 'skip'].includes(s)) return `❌ ${status}`;
   return status;
 }
 
@@ -55,7 +53,6 @@ function validateStatus(status) {
 
   // Aliases
   const aliases = {
-    // English
     'applied': 'Applied', 'sent': 'Applied',
     'evaluated': 'Evaluated', 'hold': 'Evaluated',
     'responded': 'Responded',
@@ -63,25 +60,16 @@ function validateStatus(status) {
     'offer': 'Offer',
     'rejected': 'Rejected',
     'discarded': 'Discarded', 'closed': 'Discarded', 'cancelled': 'Discarded',
-    'skip': 'SKIP', 'no aplicar': 'SKIP', 'no_aplicar': 'SKIP', 'monitor': 'SKIP',
-    // Legacy Spanish
-    'enviada': 'Applied', 'aplicada': 'Applied', 'aplicado': 'Applied',
-    'evaluada': 'Evaluated', 'evaluar': 'Evaluated', 'verificar': 'Evaluated', 'condicional': 'Evaluated',
-    'respondido': 'Responded',
-    'entrevista': 'Interview',
-    'oferta': 'Offer',
-    'rechazada': 'Rejected', 'rechazado': 'Rejected',
-    'cerrada': 'Discarded', 'descartada': 'Discarded', 'descartado': 'Discarded', 'cancelada': 'Discarded',
-    'geo blocker': 'SKIP',
+    'skip': 'SKIP', 'monitor': 'SKIP',
   };
 
   if (aliases[lower]) return aliases[lower];
 
-  // DUPLICADO/Repost → Descartado
-  if (/^(duplicado|dup|repost)/i.test(lower)) return 'Descartado';
+  // Duplicate/Repost → Discarded
+  if (/^(dup|repost)/i.test(lower)) return 'Discarded';
 
-  console.warn(`⚠️  Non-canonical status "${status}" → defaulting to "Evaluada"`);
-  return 'Evaluada';
+  console.warn(`⚠️  Non-canonical status "${status}" → defaulting to "Evaluated"`);
+  return 'Evaluated';
 }
 
 function normalizeCompany(name) {
@@ -161,8 +149,8 @@ function parseTsvContent(content, filename) {
     const col5 = parts[5].trim();
     const col4LooksLikeScore = /^\d+\.?\d*\/5$/.test(col4) || col4 === 'N/A' || col4 === 'DUP';
     const col5LooksLikeScore = /^\d+\.?\d*\/5$/.test(col5) || col5 === 'N/A' || col5 === 'DUP';
-    const col4LooksLikeStatus = /^(evaluada|aplicado|respondido|entrevista|oferta|rechazado|descartado|no aplicar|cerrada|duplicado|repost|condicional|hold|monitor)/i.test(col4);
-    const col5LooksLikeStatus = /^(evaluada|aplicado|respondido|entrevista|oferta|rechazado|descartado|no aplicar|cerrada|duplicado|repost|condicional|hold|monitor)/i.test(col5);
+    const col4LooksLikeStatus = /^(evaluated|applied|responded|interview|offer|rejected|discarded|skip|closed|dup|repost|hold|monitor)/i.test(col4);
+    const col5LooksLikeStatus = /^(evaluated|applied|responded|interview|offer|rejected|discarded|skip|closed|dup|repost|hold|monitor)/i.test(col5);
 
     let statusCol, scoreCol;
     if (col4LooksLikeStatus && !col4LooksLikeScore) {
