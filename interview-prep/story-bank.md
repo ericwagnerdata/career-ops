@@ -25,6 +25,18 @@ This file accumulates your best interview stories over time. Each evaluation (Bl
 **Best for questions about:** [list of question types this story answers]
 -->
 
+### [Metric Definition / Product Thinking] % Hardware With a Claim
+
+**Source:** Eric — Peloton (added manually)
+**S (Situation):** Peloton's north star quality metric was Claims per 100 Deliveries, a long-standing KPI used before Eric joined. If a single unit generated multiple claims, the metric counted each one separately, obscuring how many customers were actually affected.
+**T (Task):** Propose and validate a better north star metric that more accurately represented the true scope of hardware quality issues.
+**A (Action):** Proposed % Hardware With a Claim, which measured the share of delivered units in a given time window that had at least one warranty claim against them. Ran back-testing on historical data to validate trend lines and built the case for adoption by showing how it enabled a scorecard view where each product line gets a 0 to 100% score.
+**R (Result):** Metric was well received by leadership. Executives could triage quality issues by product at a glance instead of parsing raw claim counts.
+**Reflection:** The back-testing was the key to getting buy-in. Showing the new metric against historical data let stakeholders trust the trend before committing to the change. New metrics fail without that anchor.
+**Best for questions about:** Metric definition, north star metrics, product thinking for data, executive communication, translating raw data into actionable KPIs, stakeholder buy-in
+
+---
+
 ### [ETL / Architecture] Peloton Quality Spend Pipeline
 
 **Source:** Report #025 — Reddit — Senior Analytics Engineer
