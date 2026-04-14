@@ -44,16 +44,21 @@ The evaluation uses 6 blocks (A-F) with a global score of 1-5:
 
 ## Archetype Detection
 
-Classify every offer into one of these types (or hybrid of 2):
+Classify every offer into one of these types (or hybrid of 2). **Check analytics archetypes first** — they share surface signals ("pipelines", "data") with AI archetypes and are easy to misclassify.
 
 | Archetype | Key signals in JD |
 |-----------|-------------------|
-| AI Platform / LLMOps | "observability", "evals", "pipelines", "monitoring", "reliability" |
-| Agentic / Automation | "agent", "HITL", "orchestration", "workflow", "multi-agent" |
-| Technical AI PM | "PRD", "roadmap", "discovery", "stakeholder", "product manager" |
-| AI Solutions Architect | "architecture", "enterprise", "integration", "design", "systems" |
-| AI Forward Deployed | "client-facing", "deploy", "prototype", "fast delivery", "field" |
-| AI Transformation | "change management", "adoption", "enablement", "transformation" |
+| Analytics Engineer | "dbt", "data modeling", "metric layer", "transformation", "ELT", "Snowflake/BigQuery/Redshift", "data warehouse", "analytics-ready", "semantic layer" |
+| Staff / Senior Data Analyst | "self-service", "metric definitions", "executive reporting", "data dictionary", "stakeholder", "SQL", "Tableau/Looker", "insight generation", "business intelligence" |
+| Data Platform / Analytics Infra | "data infrastructure", "data platform", "lakehouse", "pipeline reliability", "data quality", "data catalog", "metadata", "orchestration (Airflow/dbt)" |
+| Applied AI / AI-Augmented Analytics | "LLM", "AI-powered", "AI tooling", "automation", "prompt engineering", "RAG", combined with analytics/data context |
+
+
+**Classification rules:**
+
+- If a JD has dbt, SQL, data modeling → **Analytics Engineer** first, even if it also mentions AI/LLM tooling
+- If a JD has "self-service", "metric", "dashboard", SQL → **Staff Data Analyst**, not AI archetype
+- Only use AI archetypes when the core deliverable is an AI system, not data infrastructure or analytics
 
 After detecting archetype, read `modes/_profile.md` for the user's specific framing and proof points for that archetype.
 
