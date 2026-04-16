@@ -34,7 +34,7 @@ Staff Analyst with 8+ years building the metric infrastructure that product orgs
 **Operations Leadership Development Program (OLDP)** | *Jul 2018 – Jul 2021*
 
 - Reduced per-defect engineering investigation time by 100+ hours by automating data ingestion and analysis workflows from optical inspection machine data
-- Saved 25+ hours per week across engineering and supervisory teams by building the site's first Tableau dashboards and Excel-to-SAP data automation pipelines
+- Saved 25+ hours per week across engineering and supervisory teams by building the site's first Tableau dashboards and automating SAP MES data extraction pipelines used for quality investigation and manufacturing improvement analysis
 - Eliminated 3,500+ operational hours annually by spearheading robotic process automation across core business workflows
 - Ensured delivery performance and quality compliance by managing $30M in supplier contracts across F-35, C-130, C-5, F-16, and F-22 programs
 
