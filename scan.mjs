@@ -422,6 +422,10 @@ async function main() {
           totalFiltered++;
           continue;
         }
+        if (!locationFilter(job.location)) {
+          totalFiltered++;
+          continue;
+        }
         if (seenUrls.has(job.url)) {
           totalDupes++;
           continue;
