@@ -24,7 +24,19 @@ const DRY_RUN = process.argv.includes('--dry-run');
 
 // Canonical status mapping
 function stripStatusEmoji(s) {
-  return s.replace(/^[✅🟡❌🔴🟢]\s*/, '').trim();
+  return s.replace(/^[✅🟡❌🔴🟢]\s*/u, '').trim();
+}
+
+function statusWithEmoji(status) {
+  const s = status.toLowerCase();
+  if (s === 'applied') return `✅ ${status}`;
+  if (s === 'offer') return `✅ ${status}`;
+  if (s === 'interview') return `🟢 ${status}`;
+  if (s === 'responded') return `🟢 ${status}`;
+  if (s === 'evaluated') return `🟡 ${status}`;
+  if (s === 'rejected') return `🔴 ${status}`;
+  if (['discarded', 'skip'].includes(s)) return `❌ ${status}`;
+  return status;
 }
 
 function normalizeStatus(raw) {
@@ -97,11 +109,12 @@ for (let i = 0; i < lines.length; i++) {
     continue;
   }
 
-  if (result.status === rawStatus) continue; // Already canonical
+  const desiredStatus = statusWithEmoji(result.status);
+  if (desiredStatus === rawStatus) continue; // Already canonical with correct icon
 
   // Apply change
   const oldStatus = rawStatus;
-  parts[2] = result.status;
+  parts[2] = desiredStatus;
 
   // Move DUPLICADO info to notes if needed
   if (result.moveToNotes && parts[9]) {

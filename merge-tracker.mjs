@@ -33,14 +33,18 @@ const VERIFY = process.argv.includes('--verify');
 const CANONICAL_STATES = ['Evaluated', 'Applied', 'Responded', 'Interview', 'Offer', 'Rejected', 'Discarded', 'SKIP'];
 
 function stripStatusEmoji(s) {
-  return s.replace(/^[✅🟡❌🔴🟢]\s*/, '').trim();
+  return s.replace(/^[✅🟡❌🔴🟢]\s*/u, '').trim();
 }
 
 function statusWithEmoji(status) {
   const s = status.toLowerCase();
-  if (['applied', 'interview', 'responded', 'offer'].includes(s)) return `✅ ${status}`;
-  if (['evaluated'].includes(s)) return `🟡 ${status}`;
-  if (['rejected', 'discarded', 'skip'].includes(s)) return `❌ ${status}`;
+  if (s === 'applied') return `✅ ${status}`;
+  if (s === 'offer') return `✅ ${status}`;
+  if (s === 'interview') return `🟢 ${status}`;
+  if (s === 'responded') return `🟢 ${status}`;
+  if (s === 'evaluated') return `🟡 ${status}`;
+  if (s === 'rejected') return `🔴 ${status}`;
+  if (['discarded', 'skip'].includes(s)) return `❌ ${status}`;
   return status;
 }
 
