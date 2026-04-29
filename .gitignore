@@ -3,10 +3,6 @@ cv.md
 data/applications.md
 data/pipeline.md
 data/scan-history.tsv
-data/lm-*.md
-data/lm-*.txt
-build-lm-summary.mjs
-triage-lm.mjs
 interview-prep/*
 !interview-prep/.gitkeep
 reports/*.md

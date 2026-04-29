@@ -16,11 +16,8 @@ Determine the mode from `{{mode}}`:
 | (empty / no args) | `discovery` -- Show command menu |
 | JD text or URL (no sub-command) | **`auto-pipeline`** |
 | `evaluate` | `evaluate` |
-| `oferta` | `evaluate` |
 | `compare` | `compare` |
-| `ofertas` | `compare` |
 | `contact` | `contact` |
-| `contacto` | `contact` |
 | `deep` | `deep` |
 | `pdf` | `pdf` |
 | `training` | `training` |

@@ -1,0 +1,151 @@
+# Applications Tracker
+
+| # | Status | Date | Company | Role | Score | PDF | Report | Notes |
+|---|--------|------|---------|------|-------|-----|--------|-------|
+| 274 | SKIP | 2026-04-29 | Loop Returns | Analytics Engineer | 2.6/5 | ❌ | [274](reports/274-loop-returns-analytics-engineer-2026-04-29.md) | Mid-level AE, comp $105-150K caps $20K below $170K floor, downlevel from Staff. Watch for Senior/Staff postings. |
+| 269 | SKIP | 2026-04-29 | Grafana Labs | Senior Analytics Engineer | 2.8/5 | ❌ | [269](reports/269-grafana-labs-senior-analytics-engineer-2026-04-29.md) | Strong dbt+BigQuery fit but posted ceiling $153K below $170K floor, do not apply |
+| 272 | SKIP | 2026-04-29 | Instacart | Senior Data Analyst | 2.9/5 | ❌ | [272](reports/272-instacart-senior-data-analyst-2026-04-29.md) | Strong dbt+finance fit but FL comp tier $131-138K is $32K below floor, do not apply |
+| 268 | Applied | 2026-04-29 | Airbnb | AI-Enabled Insights Lead | 3.6/5 | ❌ | [268](reports/268-airbnb-ai-enabled-insights-lead-2026-04-28.md) | Applied 2026-04-29. Remote US $176-220K clears floor, IC scope, AI-tooling angle matches Eric daily Claude Code workflow |
+| 264 | SKIP | 2026-04-28 | Dropbox | Senior Data Scientist, AI Products | 3.7/5 | ❌ | [264](reports/264-dropbox-senior-data-scientist-ai-products-2026-04-28.md) | Skipped 2026-04-28, DS archetype mismatch with AE/Staff DA primary positioning |
+| 263 | Rejected | 2026-04-28 | SimplePractice | Senior Data Analyst, Growth & Acquisition | 4.0/5 | ❌ | [263](reports/263-simplepractice-senior-data-analyst-growth-acquisition-2026-04-28.md) | Skipped 2026-04-28, $120-160K ceiling below $170K floor |
+| 262 | Applied | 2026-04-28 | SmarterDx | Senior Product Analyst | 4.0/5 | ❌ | [262](reports/262-smarterdx-senior-product-analyst-2026-04-28.md) | Applied 2026-04-28. Remote US, $160-200K clears floor, dbt+Snowflake+Python+Hex match. Cover letter addressed RCM gap directly (prior rejections #41 and #214 on same gap). 3rd SmarterDx attempt. |
+| 261 | Rejected | 2026-04-23 | OpenAI | People Data Automation Analyst | -/5 | ❌ | — | Historical entry. Applied prior to tracker, rejection received 2026-04-23. |
+| 260 | Applied | 2026-04-23 | Alpaca | Senior Analytics Engineer | 4.3/5 | ❌ | [260](reports/260-alpaca-senior-analytics-engineer-2026-04-23.md) | Applied 2026-04-23, perfect archetype match (dbt SQL GCP), no posted salary, ask recruiter for range before take-home |
+| 257 | SKIP | 2026-04-21 | Aledade | BI Lead Analyst | 2.8/5 | ❌ | [257](reports/257-aledade-bi-lead-analyst-2026-04-21.md) | Healthcare data minimum qual not met, comp below $170K floor |
+| 256 | Applied | 2026-04-28 | Life360 | Senior Analytics Engineer II, AI Native | 4.6/5 | ❌ | [256](reports/256-life360-senior-analytics-engineer-ii-ai-native-2026-04-28.md) | Re-eval 2026-04-28 (2.7→4.6). Applied 2026-04-28, near-perfect AE+AI-native archetype fit, comp $148-216.5K Remote US, anchor $185K+ |
+| 255 | 🟢 Applied | 2026-04-22 | Alma | Senior Data Scientist II | 4.1/5 | ❌ | [255](reports/255-alma-2026-04-21.md) | Applied 2026-04-22. Remote US, 190-210K, strong level and comp fit, mentorship hook aligns. |
+| 250 | SKIP | 2026-04-21 | Hightouch | Forward Deployed Marketing Data Scientist | 3.6/5 | ❌ | [250](reports/250-hightouch-2026-04-21.md) | Skipped 2026-04-22. Remote NA, 140-220K, SQL and Python with customer facing split, marketing A/B gap. |
+| 242 | Applied | 2026-04-22 | Pinterest | Sr. Data Scientist, Gen AI Automation | 3.8/5 | ❌ | [242](reports/242-pinterest-sr-data-scientist-gen-ai-automation-2026-04-21.md) | Skipped 2026-04-22, LLM pipeline gap, building proof points before applying to Applied AI roles |
+| 239 | SKIP | 2026-04-21 | Axon | Business Analyst II | 1.8/5 | ❌ | [239](reports/239-axon-business-analyst-ii-2026-04-21.md) | Skipped 2026-04-22. Entry to mid BA with up to 60 percent travel, violates remote-only policy |
+| 238 | SKIP | 2026-04-21 | Earnest | Lead Data Scientist | 3.2/5 | ❌ | [238](reports/238-earnest-lead-data-scientist-2026-04-21.md) | Skipped 2026-04-22. Lead DS in consumer lending, experimentation and causal inference gaps plus archetype mismatch |
+| 234 | SKIP | 2026-04-21 | Socure | Staff Data Scientist RiskOS | 3.3/5 | ❌ | [234](reports/234-socure-riskos-2026-04-21.md) | Skipped 2026-04-22. Best Socure fit, Staff platform DS with pipelines and GenAI, still DS-titled but analytics adjacent |
+| 229 | SKIP | 2026-04-21 | Engine | Staff Data Scientist, Pricing | 2.8/5 | ❌ | [229](reports/229-engine-2026-04-21.md) | Skipped 2026-04-22. Staff DS pricing role, comp range clears floor but archetype mismatch on causal inference and ML modeling |
+| 228 | SKIP | 2026-04-21 | Toast | Lead Credit Risk Analytics & AI Enablement | 1.5/5 | ❌ | [237](reports/237-toast-2026-04-21.md) | Re-eval 2026-04-22 (4.0→1.5). Bangalore India per Greenhouse API, not viable for US candidate |
+| 226 | SKIP | 2026-04-21 | Databricks | Senior Business Analyst | 2.2/5 | ❌ | [226](reports/226-databricks-senior-business-analyst-2026-04-21.md) | Business systems / OTR UAT role, archetype mismatch with Staff AE/DA targets |
+| 225 | SKIP | 2026-04-21 | Alma | Senior BI Associate, Marketing | 3.1/5 | ❌ | [225](reports/225-alma-senior-bi-marketing-2026-04-21.md) | Remote US dbt role but posted ceiling $120K sits $50K below floor |
+| 224 | SKIP | 2026-04-21 | Octus | ESMA Data Analyst | 1.8/5 | ❌ | [224](reports/224-octus-esma-data-analyst-2026-04-21.md) | Bucharest junior credit research role, not a data analytics fit |
+| 216 | SKIP | 2026-04-19 | Fanatics | Data Scientist III | 1.5/5 | ❌ | [216](reports/216-fanatics-data-scientist-iii-2026-04-19.md) | Job ID 4223233009 returned 404; same pattern as #210 (hybrid + comp below floor + DS archetype mismatch) |
+| 212 | SKIP | 2026-04-19 | Angi | Senior Business Analyst, Commercial Analytics | 1.5/5 | ❌ | [212](reports/212-angi-senior-business-analyst-commercial-2026-04-19.md) | Comp $105-150K below floor; Senior step-down; commercial/RevOps archetype mismatch |
+| 211 | SKIP | 2026-04-19 | Fanatics | Senior Insight Analyst | 1.0/5 | ❌ | [211](reports/211-fanatics-senior-insight-analyst-2026-04-19.md) | Hybrid 3 days/week; comp $90-130K far below floor; qualitative research role |
+| 208 | SKIP | 2026-04-19 | Engine | Senior Revenue Insights Analyst | 2.0/5 | ❌ | [208](reports/208-engine-senior-revenue-insights-analyst-2026-04-19.md) | Comp $120-155K below floor; RevOps/GTM archetype mismatch; different from #13 Staff AE |
+| 207 | SKIP | 2026-04-19 | Brex | Data Analyst II (São Paulo) | 1.0/5 | ❌ | [207](reports/207-brex-data-analyst-ii-sao-paulo-2026-04-19.md) | Brazil-based hybrid; not eligible (US remote only) |
+| 205 | SKIP | 2026-04-19 | Mercury | Senior Data Scientist | 2.5/5 | ❌ | [205](reports/205-mercury-senior-data-scientist-banking-2026-04-19.md) | Comp $200-250K exceptional; DS archetype mismatch (causal inference/credit modeling required) |
+| 204 | SKIP | 2026-04-19 | Carrot Fertility | Data Scientist | 1.5/5 | ❌ | [204](reports/204-carrot-fertility-data-scientist-2026-04-19.md) | Dual blocker: comp $135-150K below floor; healthcare DS archetype mismatch |
+| 203 | SKIP | 2026-04-19 | onX Maps | Data Scientist III (AI/ML) | 1.5/5 | ❌ | [203](reports/203-onxmaps-data-scientist-iii-aiml-2026-04-19.md) | Dual blocker: comp $126-149K below floor; ML/Vertex AI archetype mismatch |
+| 202 | SKIP | 2026-04-19 | Northbeam | Staff Data Scientist | 2.0/5 | ❌ | [202](reports/202-northbeam-staff-data-scientist-2026-04-19.md) | DS archetype mismatch (MMM/causal inference); comp $180-230K clears floor but skills don't |
+| 201 | SKIP | 2026-04-19 | AlphaSense | Staff Analytics Engineer (Delhi) | 1.5/5 | ❌ | [201](reports/201-alphasense-staff-analytics-engineer-delhi-2026-04-19.md) | On-site Delhi India — hard geographic blocker |
+| 199 | SKIP | 2026-04-19 | Leidos | Tableau Developer Lead | 2.7/5 | ❌ | [199](reports/199-leidos-tableau-developer-lead-2026-04-19.md) | Posted $107.9K–$195K; ceiling clears floor but midpoint ($151K) does not; clearance required; step down from Staff track |
+| 198 | 🟡 Evaluated | 2026-04-17 | Atomic Canyon | Data-Focused APM | 2.9/5 | ❌ | [198](reports/198-atomic-canyon-apm-2026-04-17.md) | Interview scheduled Friday 2026-04-24; career pivot to PM; strong domain fit (nuclear/quality/ME); comp and remote risks unconfirmed |
+| 196 | Applied | 2026-04-17 | Hack The Box | Staff Performance Data Analyst | 2.5/5 | ❌ | [196](reports/196-hack-the-box-staff-performance-data-analyst-2026-04-17.md) | Applied 2026-04-17; comp ceiling $180K barely clears floor; client-facing RevOps angle noted |
+| 194 | SKIP | 2026-04-16 | PDW | Senior BI Analyst | 2.0/5 | ❌ | [194](reports/194-pdw-sr-bi-analyst-2026-04-16.md) | Comp $130-150K hard below $170K floor. Power BI gap. RevOps domain mismatch. Do not apply. |
+| 193 | Applied | 2026-04-16 | Netflix | Performance Senior Analyst, NCX | 3.0/5 | ❌ | [193](reports/193-netflix-performance-sr-analyst-ncx-2026-04-16.md) | $270K-$380K comp exceptional; A/B testing gap is screener risk; content/product domain mismatch vs ops background |
+| 191 | Discarded | 2026-04-16 | Lockheed Martin | MES Project Engineer (C&R/EM) | 2.5/5 | ❌ | [191](reports/191-lockheed-martin-mes-project-engineer-2026-04-16.md) | Discarded after Greg call. SAP MES BA/tester, phased role to 2029-2030, heavy January travel, not analytics |
+| 190 | Applied | 2026-04-22 | Toast | Principal Product Analytics Engineer | 3.9/5 | ❌ | [220](reports/220-toast-principal-product-analytics-engineer-2026-04-21.md) | Applied 2026-04-22. Principal stretch, solid foundational AE fit |
+| 189 | SKIP | 2026-04-15 | Deloitte | Sr. Data Analyst | 2.0/5 | ❌ | [189](reports/189-deloitte-sr-data-analyst-tampa-2026-04-15.md) | Dual hard blocker. Tampa hybrid + Senior title below Staff. Big 4 comp ~$95-130K far below $170K floor |
+| 188 | SKIP | 2026-04-15 | Atrium | Analytics Lead | 2.5/5 | ❌ | [188](reports/188-atrium-analytics-lead-2026-04-15.md) | Consulting archetype mismatch, comp likely below $170K floor (Glassdoor ~$117-126K), JD unverifiable (JS-rendered) |
+| 187 | SKIP | 2026-04-15 | Thrive Market | Senior Data Analyst, Product | 2.5/5 | ❌ | [187](reports/187-thrive-market-senior-data-analyst-product-2026-04-15.md) | Comp ceiling $165K below $170K floor. Senior title step-down. Amplitude/web analytics gap is core requirement |
+| 186 | SKIP | 2026-04-15 | Fleetio | AI & Automation Analyst | 2.0/5 | ❌ | [186](reports/186-fleetio-ai-automation-analyst-2026-04-15.md) | IT ops domain mismatch + comp likely below $170K floor — do not apply |
+| 185 | Applied | 2026-04-16 | GitLab | Senior Data Analyst, Marketing Analytics | 3.8/5 | ❌ | [185](reports/185-gitlab-senior-data-analyst-marketing-analytics-2026-04-15.md) | Rejected 2026-04-19. Strong tech stack fit but marketing domain gap. 4th GitLab application |
+| 184 | Applied | 2026-04-15 | Twilio | Staff Analytics Engineer, R&D | 4.4/5 | ❌ | [184](reports/184-twilio-staff-analytics-engineer-2026-04-15.md) | Exact archetype match. dbt/Looker/metric standards proof points map 1:1 |
+| 183 | SKIP | 2026-04-15 | Vanta | Staff Data Engineer | 3.6/5 | ❌ | [183](reports/183-vanta-staff-data-engineer-2026-04-15.md) | $213K-$251K comp clears floor strongly. CDC/Terraform gaps. dbt/Looker stack alignment solid |
+| 182 | SKIP | 2026-04-15 | Atlan | Principal Engineer (Data Platform) | 3.8/5 | ❌ | [182](reports/182-atlan-principal-engineer-data-platform-2026-04-15.md) | Strong domain fit (data catalog/metadata), but level stretch to Principal and comp unknown. Apply with conditions |
+| 181 | SKIP | 2026-04-15 | onX Maps | Staff Data Engineer | 3.0/5 | ❌ | [181](reports/181-onxmaps-staff-data-engineer-2026-04-15.md) | Wrong archetype entirely. Data platform/infrastructure role, not AE or DA. Iceberg/lakehouse skills required |
+| 180 | SKIP | 2026-04-15 | Anduril Industries | Data Analyst, Corporate Operations | 2.8/5 | ❌ | [180](reports/180-anduril-data-analyst-corporate-operations-2026-04-15.md) | Comp $86-114K fails floor by $56K+. Targets 1-2yr experience. Eric is 8yr overqualified |
+| 179 | Rejected | 2026-04-16 | Tailscale | Analytics Engineer, Data | 3.6/5 | ❌ | [179](reports/179-tailscale-analytics-engineer-data-2026-04-15.md) | Rejected 2026-04-23. Strong AE stack match. $170K ceiling exactly at floor |
+| 178 | SKIP | 2026-04-15 | Seed Health | Senior Analytics Engineer | 3.4/5 | ❌ | [178](reports/178-seed-senior-analytics-engineer-2026-04-15.md) | Comp ceiling $165K is below $170K floor. Strong technical fit but hard stop on comp |
+| 177 | Applied | 2026-04-16 | Octus | Senior Analytics Engineer | 3.6/5 | ❌ | [177](reports/177-octus-senior-analytics-engineer-2026-04-15.md) | Applied 2026-04-16. Strong AE archetype fit, no comp posted, financial domain gap, PE-backed |
+| 176 | SKIP | 2026-04-15 | Cribl | Staff Front End Engineer, Data Visualization | 1.5/5 | ❌ | [176](reports/176-cribl-staff-front-end-engineer-data-visualization-2026-04-15.md) | Pure front-end SWE (React/TypeScript), scanner false positive on "Data Visualization" keyword |
+| 175 | SKIP | 2026-04-15 | YipitData | Data Analyst | 1.5/5 | ❌ | [175](reports/175-yipitdata-data-analyst-2026-04-15.md) | India-based role (IST/HKT hours), junior level internally (Data Specialist), scanner false positive |
+| 174 | SKIP | 2026-04-15 | Okta | DevOps Data Engineer | 1.8/5 | ❌ | [174](reports/174-okta-devops-data-engineer-2026-04-15.md) | DC hybrid, US Person req, wrong archetype (Federal DevSecOps), skills completely mismatched |
+| 172 | SKIP | 2026-04-15 | Alma | Analytics Engineer II | 3.4/5 | ❌ | [172](reports/172-alma-analytics-engineer-ii-2026-04-15.md) | Near-perfect stack match (dbt/Redshift/Python) but $124K-$160K ceiling is $10K below $170K floor |
+| 171 | SKIP | 2026-04-15 | Angi | Senior Data Engineer, Data Infrastructure | 3.2/5 | ❌ | [171](reports/171-angi-senior-data-engineer-data-infrastructure-2026-04-15.md) | Platform/infra engineering (Kubernetes, Kafka, Iceberg) not AE archetype. On-call rotation. Company stability concerns |
+| 170 | SKIP | 2026-04-15 | Dropbox | Data Engineer | 2.8/5 | ❌ | [170](reports/170-dropbox-data-engineer-2026-04-15.md) | Remote Mexico only, wrong geography + wrong archetype (Spark infra vs dbt AE) |
+| 162 | SKIP | 2026-04-14 | Samsara | Senior Marketing AI Data Engineer | 1.8/5 | ❌ | [162](reports/162-samsara-senior-marketing-ai-data-engineer-2026-04-14.md) | Canada-only remote + comp ~$86-111K USD — both hard blockers |
+| 161 | SKIP | 2026-04-14 | HubSpot | Technical Lead II - Data Infrastructure | 2.0/5 | ❌ | [161](reports/161-hubspot-technical-lead-ii-data-infrastructure-2026-04-14.md) | Management role (player-coach 3-5 eng) + Java stack — cap 2.0 |
+| 159 | SKIP | 2026-04-14 | Auto Integrate | Senior Analytics Engineer | 3.2/5 | ❌ | [159](reports/159-auto-integrate-senior-analytics-engineer-2026-04-14.md) | No comp posted, Azure/MS SQL stack mismatch, build-from-scratch fit, ask for range before applying |
+| 158 | Rejected | 2026-04-17 | Recharge | Senior Data Analyst, GTM Analytics | 3.8/5 | ❌ | [158](reports/158-recharge-senior-data-analyst-gtm-2026-04-14.md) | Rejected 2026-04-17 |
+| 157 | SKIP | 2026-04-14 | Boulevard | Staff Data Analyst | 3.0/5 | ❌ | [157](reports/157-boulevard-staff-data-analyst-2026-04-14.md) | Comp ceiling $158,400 below $170K floor. Product instrumentation gap. Snowflake gap |
+| 156 | Rejected | 2026-04-14 | Tuckernuck | Senior Data Analyst | N/A | ❌ |  | Inbound recruiter, salary too high for them, BigQuery + dbt + Hex stack, DC-based role |
+| 155 | Applied | 2026-04-14 | Flock Safety | Analytics Engineer | N/A | ❌ |  | Applied via Ashby, no prior evaluation |
+| 154 | SKIP | 2026-04-14 | Ramp | AML Operations Analyst | 1.0/5 | ❌ | [154](reports/154-ramp-aml-operations-analyst-2026-04-14.md) | Wrong archetype (compliance ops), comp $97K-$135K far below $170K floor |
+| 150 | Rejected | 2026-04-21 | Upstart | Principal Analyst Product Analytics | 3.8/5 | ❌ | [221](reports/221-upstart-principal-product-analyst-2026-04-21.md) | Rejected 2026-04-23 (blanket rejection across Upstart apps) |
+| 145 | Applied | 2025-10-28 | Hatch | Senior Analytics Engineer | N/A | ❌ |  | pre-career-ops backfill |
+| 142 | Applied | 2026-04-15 | Stripe | Strategy and Analytics Analyst | 2.5/5 | ❌ | [142](reports/142-stripe-strategy-and-analytics-analyst-2026-04-15.md) | Re-eval 2026-04-15 (0→2.5). Step-down title, likely comp breach, active Staff DA app (#36) at Stripe, do not apply |
+| 141 | Applied | 2025-10-31 | Oura | Senior Business Systems Analyst, CPQ | N/A | ❌ |  | pre-career-ops backfill |
+| 139 | Applied | 2025-11-05 | Dropbox | Senior Business Intelligence Engineer | N/A | ❌ |  | pre-career-ops backfill (2nd application) |
+| 138 | Applied | 2025-11-07 | Pinterest | Data Analyst II | N/A | ❌ |  | pre-career-ops backfill |
+| 133 | Applied | 2025-11-15 | Toast | Staff Data Analyst, Operations | N/A | ❌ |  | pre-career-ops backfill (2nd application) |
+| 131 | Applied | 2025-11-15 | Block | Senior Data Analyst, Regulatory | N/A | ❌ |  | pre-career-ops backfill |
+| 130 | Applied | 2025-11-15 | Huntress | Staff Data Analyst, SOC/Support | N/A | ❌ |  | pre-career-ops backfill |
+| 129 | Applied | 2025-11-17 | Axon | Senior Data Analyst, Prepared | N/A | ❌ |  | pre-career-ops backfill |
+| 128 | Applied | 2025-11-17 | Expel | Principal, Central Analytics Lead | N/A | ❌ |  | pre-career-ops backfill |
+| 127 | Applied | 2025-11-18 | Paperless Post | Senior Analytics Engineer | N/A | ❌ |  | pre-career-ops backfill |
+| 126 | Applied | 2025-11-18 | PlayStation Global | Principal Analytics Engineer (Remote) | N/A | ❌ |  | pre-career-ops backfill (2nd application) |
+| 125 | Discarded | 2026-04-15 | Aurora Innovation | Senior Data Analyst, Commercial & Operations | 3.2/5 | ❌ | [125](reports/125-aurora-innovation-senior-data-analyst-commercial-operations-2026-04-15.md) | Not remote — location blocker |
+| 124 | Applied | 2025-12-01 | Maven Clinic | Senior Data Engineer | N/A | ❌ |  | pre-career-ops backfill |
+| 123 | Applied | 2025-12-01 | Underdog Sports | Senior Analytics Engineer | N/A | ❌ |  | pre-career-ops backfill |
+| 122 | Applied | 2025-12-01 | Underdog Sports | Senior Data Analyst, Product | N/A | ❌ |  | pre-career-ops backfill |
+| 121 | Applied | 2025-12-01 | Fetch | Lead Data Analyst, User Analytics & Insights | N/A | ❌ |  | pre-career-ops backfill (2nd application) |
+| 120 | Applied | 2025-12-02 | Earnest | Senior Analytics Engineer | N/A | ❌ |  | pre-career-ops backfill |
+| 116 | Applied | 2025-12-17 | Underdog Sports | Staff Revenue Operations Analyst | N/A | ❌ |  | pre-career-ops backfill — revenue ops archetype |
+| 115 | Applied | 2025-12-17 | Fetch | Solutions Engineer | N/A | ❌ |  | pre-career-ops backfill — wrong archetype |
+| 112 | Applied | 2025-12-17 | Fetch | Analytics Engineer | N/A | ❌ |  | pre-career-ops backfill |
+| 111 | Applied | 2025-12-17 | Angi | Staff Analyst, Marketing | N/A | ❌ |  | pre-career-ops backfill |
+| 109 | Applied | 2026-01-06 | Artisan Partners | Data Analytics Developer | N/A | ❌ |  | pre-career-ops backfill |
+| 107 | Discarded | 2026-01-09 | Block | Staff Ecosystem Analyst | N/A | ❌ |  | pre-career-ops, Bay Area CA role — location mismatch, now inactive in GH |
+| 105 | Discarded | 2026-01-09 | HubSpot | Lead Monetization Analyst | N/A | ❌ |  | pre-career-ops, role now inactive in GH |
+| 104 | Rejected | 2026-04-21 | Upstart | Senior Data Scientist | 3.8/5 | ❌ | [253](reports/253-upstart-2026-04-21.md) | Rejected 2026-04-23 (blanket rejection across Upstart apps) |
+| 99 | SKIP | 2026-04-14 | Lyft | Senior Data Scientist, Rider New Products | 2.0/5 | ❌ | [99](reports/099-lyft-senior-data-scientist-rider-new-products-2026-04-14.md) | Hybrid 3 days/wk, Senior below Staff, DS not AE track |
+| 93 | SKIP | 2026-04-14 | Lyft | Analytics Lead, Safety & Customer Care | 2.0/5 | ❌ | [93](reports/093-lyft-analytics-lead-safety-customer-care-2026-04-14.md) | Hybrid 3 days/wk, comp well below floor, remote blocker |
+| 85 | SKIP | 2026-04-14 | Hinge Health | Senior Data Scientist | 2.0/5 | ❌ | [85](reports/085-hinge-health-senior-data-scientist-2026-04-14.md) | Hybrid 3 days/wk, DS/MLE track, healthcare claims specialty |
+| 84 | Rejected | 2026-04-14 | Coinbase | Senior Analytics Engineer (Platform - Financial Analytics) | 3.8/5 | ❌ | [84](reports/084-coinbase-senior-analytics-engineer-financial-2026-04-14.md) | Rejected 2026-04-16, Remote US, AE archetype, $180K–$212K, crypto fintech domain shift |
+| 83 | SKIP | 2026-04-14 | Chime | Staff Data Analyst | 3.2/5 | ❌ | [83](reports/083-chime-staff-data-analyst-2026-04-14.md) | Strong archetype/comp match, 4 days/week SF blocks it, FP&A gap |
+| 77 | SKIP | 2026-04-14 | Roku | Senior Data Scientist | 2.5/5 | ❌ | [77](reports/077-roku-senior-data-scientist-2026-04-14.md) | In-office Mon-Thu, Senior below Staff target, DS not AE |
+| 75 | SKIP | 2026-04-14 | Hims & Hers | Staff Data Scientist | 2.5/5 | ❌ | [75](reports/075-hims-hers-staff-data-scientist-2026-04-14.md) | Remote US, $180K–$220K, ML Engineering/MLOps role, wrong track |
+| 74 | Discarded | 2026-04-14 | HubSpot | Senior Analytics Engineer | 3.8/5 | ❌ | [74](reports/074-hubspot-senior-analytics-engineer-2026-04-14.md) | India remote only — not eligible |
+| 73 | Applied | 2026-04-14 | Ramp | Data Scientist, All Levels | 2.5/5 | ❌ | [73](reports/073-ramp-data-scientist-all-levels-2026-04-14.md) | Remote eligible, dbt/Looker stack match, leveling unclear, investigate |
+| 71 | SKIP | 2026-04-14 | PlayStation Global (SIE) | Staff Data Scientist, Experimentation & Measurement | 3.0/5 | ❌ | [71](reports/071-playstation-staff-data-scientist-exp-measurement-2026-04-14.md) | Remote US, $212K–$318K, experimentation DS specialist required |
+| 69 | Rejected | 2026-04-19 | PlayStation Global (SIE) | Staff Business Analyst, PlayStation Store | 2.5/5 | ❌ | [69](reports/069-playstation-staff-business-analyst-store-2026-04-14.md) | Rejected 2026-04-19, West Coast remote only, Bay Area in-person required |
+| 64 | SKIP | 2026-04-14 | Databricks | Staff Data Scientist | 2.5/5 | ❌ | [64](reports/064-databricks-staff-data-scientist-2026-04-14.md) | Remote eligible, ML platform DS role, outside AE/analyst track |
+| 63 | SKIP | 2026-04-14 | Databricks | Sr. Data Analyst | 2.5/5 | ❌ | [63](reports/063-databricks-sr-data-analyst-2026-04-14.md) | Tableau admin focus, Sr level below target, remote unclear |
+| 62 | Rejected | 2026-04-16 | Databricks | Sr Analytics Engineer - GTM Strategy and Operations | 3.8/5 | ❌ | [62](reports/062-databricks-sr-analytics-engineer-gtm-2026-04-14.md) | Rejected 2026-04-16, AE archetype match, comp $102K–$180K below floor |
+| 54 | SKIP | 2026-04-14 | Mixpanel | Data Scientist | 2.5/5 | ❌ | [54](reports/054-mixpanel-data-scientist-2026-04-14.md) | Hybrid SF, DS track, Master's required, good comp |
+| 53 | SKIP | 2026-04-14 | Gusto | Staff Data Scientist, Growth + Core Products | 2.0/5 | ❌ | [53](reports/053-gusto-staff-data-scientist-growth-2026-04-14.md) | Hybrid required, DS track not AE, PhD/MS + 7-10 yr DS req |
+| 50 | SKIP | 2026-04-14 | Hex | Data Analyst | 2.5/5 | ❌ | [50](reports/050-hex-data-analyst-2026-04-14.md) | Comp below floor ($140K–$160K), mid-level title, remote yes |
+| 49 | SKIP | 2026-04-14 | Cordial | Sr. Applied AI Engineer | 2.6/5 | ❌ | [049](reports/049-cordial-sr-applied-ai-engineer-2026-04-14.md) | Software eng role (Python 6-8yr, RAG, LangChain) — archetype mismatch, do not apply despite strong comp $180K-$200K |
+| 47 | Applied | 2026-04-13 | Fanatics | Staff Data Analyst, Marketing | 3.0/5 | ❌ |  | Recruiter screen done 2026-04-17 (Julieta). HM Will (3-person team), adjacent team Tommy (also hiring, can swap between roles), skip Neve. Tampa office exists, said remote-preferred but open to hybrid. Process Will call (45min) → technical (Excel, Will + Tommy) → Neve. Expect outreach today or Monday. [Report](reports/047-fanatics-staff-data-analyst-marketing-2026-04-13.md) |
+| 46 | Applied | 2026-04-13 | Future | Senior/Staff Data Analyst | 4.3/5 | ❌ |  | $180K-$210K, greenfield build narrative, AI force multiplier, health/wellness passion required. [Report](reports/046-future-senior-staff-data-analyst-2026-04-13.md) |
+| 44 | 🎤 Interview | 2026-04-13 | SmithRx | Staff Data Analyst | 3.6/5 | ❌ |  | Initial interview 2026-04-16 complete, advancing to next round (Danielle sent link 2026-04-23) |
+| 42 | SKIP | 2026-04-13 | Atlassian | Senior Sales Compensation Analyst | 1.8/5 | ❌ |  | Comp ops role (Anaplan/sales plans), not IC analytics — functional mismatch, comp at floor, do not apply |
+| 41 | Rejected | 2026-04-13 | SmarterDx | Technical Business Analyst | 4.2/5 | ❌ |  | Strong stack match and top-of-range comp ($170K-$210K), RCM domain gap is the main risk |
+| 39 | SKIP | 2026-04-13 | Stripe | Compensation Analyst | 1.8/5 | ❌ |  | Wrong function (HR/People), comp ceiling below $170K floor, hybrid risk — do not apply |
+| 38 | Applied | 2026-04-13 | Figma | Data Engineer | 3.6/5 | ❌ |  | Applied + referral contact Bernie Marger (friend at Figma) |
+| 37 | Discarded | 2026-04-13 | Atlassian | Senior Analytics Engineer | 3.8/5 | ❌ |  | Role closed before applying |
+| 36 | Applied | 2026-04-13 | Stripe | Staff Data Analyst | 4.4/5 | ❌ |  | Priority apply — exact archetype match, $179K–$268K, fully remote from Tampa |
+| 35 | SKIP | 2026-04-13 | Reddit | Data Scientist, Ads | 2.6/5 | ❌ |  | Do not apply — ML/PhD role, ads domain, wrong archetype, watch for AE/analyst openings |
+| 34 | Applied | 2026-04-13 | Figma | Data Scientist | 3.4/5 | ❌ |  | Applied alongside DE role — referral contact Bernie Marger |
+| 32 | Applied | 2026-04-13 | Travel + Leisure Co | AI Analytics Specialist, Global Rental Operations | /5 | ❌ |  | Rejected 2026-04-20 after Workday application |
+| 30 | Rejected | 2026-04-09 | Roku | Audience Insights and Analytics Lead | /5 | ❌ |  | Applied and rejected |
+| 29 | SKIP | 2026-04-08 | MrBeast | Analyst, YouTube Intelligence | 1.5/5 | ❌ |  | TRIPLE BLOCKER on-site NYC + 3-level downgrade to Analyst + comp ~$59K median far below $170K floor — do not apply |
+| 27 | Applied | 2026-04-08 | Airbnb | Staff, Advanced Analytics, Product | 4.0/5 | ❌ |  | Role closed/unavailable — link dead |
+| 26 | SKIP | 2026-04-08 | Vanta | Senior Marketing Analyst | 2.4/5 | ❌ |  | COMP BREACH posted ceiling $152K is $18K below $170K floor, Senior (L4) step-down, no marketing domain experience |
+| 25 | Applied | 2026-04-08 | Reddit | Senior Analytics Engineer | 4.1/5 | ❌ |  | Strong AE match, $190K–$267K base clears floor, gap on S&M domain + no M.S. degree requirement |
+| 24 | SKIP | 2026-04-08 | Schneider Electric | Data Analyst Lead | 1.5/5 | ❌ |  | TRIPLE OVERRIDE management title + Nashville on-site + comp below $170K floor — do not apply |
+| 22 | SKIP | 2026-04-08 | Socure | Analytics Engineer | 2.4/5 | ❌ |  | BELOW FLOOR ceiling $125K ($45K below walk-away), mid-level role vs Staff title, do not apply |
+| 20 | Applied | 2026-04-13 | Lyra Health | Sr. Data Analyst | 3.1/5 | ❌ |  | Ceiling $157K, downlevel, healthcare domain — applied with comp flex |
+| 19 | SKIP | 2026-04-08 | Spring Health | Senior Data Analyst, Customer Value | 2.6/5 | ❌ |  | BELOW FLOOR ceiling $142K ($28K below walk-away), downlevel, healthcare domain, do not apply |
+| 18 | Applied | 2026-04-13 | Instacart | Senior Analytics Engineer, Marketing | 3.8/5 | ❌ |  | Rejected 2026-04-16, ceiling $168K, downlevel title, marketing domain gap |
+| 17 | Applied | 2026-04-13 | Shopify | Staff Business Analyst - Revenue Data | 3.6/5 | ❌ |  | Salary unknown (likely clears floor), JD partially reconstructed, eCommerce domain gap, MBA is an asset |
+| 16 | Applied | 2026-04-13 | Tala | Senior Analytics Engineer | 3.7/5 | ❌ |  | Good dbt match, salary unknown (global fintech, comp risk), below-Staff title, require comp disclosure |
+| 15 | Applied | 2026-04-08 | HighLevel | Staff Analytics Engineer - Customer Data Platform | 4.3/5 | ❌ |  | India remote only — not eligible |
+| 14 | Discarded | 2026-04-08 | Lithic | Senior Data Analyst, Risk & Compliance | 2.8/5 | ❌ |  | BELOW FLOOR ceiling $165K, downlevel title, fintech domain gap, do not apply |
+| 13 | Applied | 2026-04-08 | Engine | Staff Analytics Engineer | 4.4/5 | ❌ |  | Best archetype match in batch (Medallion migration), comp ceiling $192K tight, dbt Mesh gap manageable |
+| 12 | Discarded | 2026-04-08 | Life360 | Senior Analytics Engineer II | 4.1/5 | ❌ |  | Role closed |
+| 10 | Rejected | 2026-04-08 | Upstart | Staff Data Analyst, Servicing | 3.8/5 | ❌ |  | Rejected 2026-04-23 (blanket rejection across Upstart apps). Strong comp ($157K-$217.5K), Staff match, quarterly onsites, no fintech domain experience |
+| 9 | Discarded | 2026-04-08 | Vanta | Senior Analytics Engineer, GTM Analytics | 4.2/5 | ❌ |  | Greenfield AE role, excellent dbt match — role closed before applying |
+| 7 | Applied | 2026-04-08 | Airbnb | Staff Analytics Engineer - Foundational Data | 4.3/5 | ❌ |  | Strong comp ($194K-$240K), perfect archetype match, slight stack gap on Presto/Spark |
+| 6 | Rejected | 2026-04-09 | Weedmaps | Staff Data Analyst | 3.8/5 | ❌ |  | Recruiter call done (Michaela Nelson), $190K base + 15% bonus = ~$218.5K TC confirmed, next step intro call with Emily Collins (VP Data) |
+| 5 | Applied | 2026-04-08 | Hims & Hers | Staff Analyst, Product | 3.8/5 | ✅ |  | Product analytics IC, A/B testing gap but strong infra/self-service fit, comp ceiling $185K clears floor — anchor $185K |
+| 4 | Applied | 2026-04-08 | Reddit | Community Growth Analyst | 3.7/5 | ❌ |  | 10yr Reddit user + Salesforce exp close key gaps, comp floor $132.6K below walk-away — anchor $180K |
+| 3 | Rejected | 2026-04-08 | PatientPoint | Senior Product Solutions Lead |  | ❌ |  | Applied, not selected |
+| 2 | Rejected | 2026-04-08 | PatientPoint | Data Visualization Engineer | 3.8/5 | ❌ |  | Inbound Erik Dawson, remote confirmed despite hybrid listing, reached technical interview — prep was the gap |

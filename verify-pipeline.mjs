@@ -64,7 +64,7 @@ for (const line of lines) {
   const num = parseInt(parts[1]);
   if (isNaN(num)) continue;
   entries.push({
-    num, status: parts[2].replace(/^[✅🟡❌🔴🟢]\s*/, '').trim(), date: parts[3], company: parts[4], role: parts[5],
+    num, status: parts[2].replace(/^[✅🟡❌🔴🟢]\s*/u, '').trim(), date: parts[3], company: parts[4], role: parts[5],
     score: parts[6], pdf: parts[7], report: parts[8],
     notes: parts[9] || '',
   });

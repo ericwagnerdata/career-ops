@@ -1,4 +1,4 @@
-# Mode: ofertas — Multi-Offer Comparison
+# Mode: compare — Multi-Offer Comparison
 
 Scoring matrix across 10 weighted dimensions:
 

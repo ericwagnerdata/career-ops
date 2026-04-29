@@ -1,4 +1,4 @@
-# Mode: oferta — Full A-F Offer Evaluation
+# Mode: evaluate — Full A-F Offer Evaluation
 
 When the candidate pastes an offer (text or URL), always deliver all 6 blocks:
 
