@@ -34,6 +34,10 @@
   <img src="docs/demo.gif" alt="Career-Ops Demo" width="800">
 </p>
 
+<p align="center">
+  <img src="docs/screenshot.png" alt="Career-Ops Screenshot" width="800">
+</p>
+
 <p align="center"><strong>740+ job listings evaluated · 100+ personalized CVs · 1 dream role landed</strong></p>
 
 ## What Is This
