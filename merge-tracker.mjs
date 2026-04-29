@@ -7,8 +7,9 @@
  * - 8-col: num\tdate\tcompany\trole\tstatus\tscore\tpdf\treport (no notes)
  * - Pipe-delimited (markdown table row): | col | col | ... |
  *
- * Dedup: company normalized + role fuzzy match + report number match
- * If duplicate with higher score → update in-place, update report link
+ * Dedup: ONLY by exact URL match (read from each report file's `**URL:**` line).
+ * If the same URL already exists in the tracker → update in place (any score change).
+ * If URLs differ or either side has no URL → add as a new entry, even at the same company.
  * Validates status against states.yml (rejects non-canonical, logs warning)
  *
  * Run: node career-ops/merge-tracker.mjs [--dry-run] [--verify]
@@ -76,11 +77,15 @@ function normalizeCompany(name) {
   return name.toLowerCase().replace(/[^a-z0-9]/g, '');
 }
 
-function roleFuzzyMatch(a, b) {
-  const wordsA = a.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-  const wordsB = b.toLowerCase().split(/\s+/).filter(w => w.length > 3);
-  const overlap = wordsA.filter(w => wordsB.some(wb => wb.includes(w) || w.includes(wb)));
-  return overlap.length >= 2;
+function getReportUrl(reportLink) {
+  if (!reportLink) return null;
+  const m = reportLink.match(/\(([^)]+\.md)\)/);
+  if (!m) return null;
+  const path = join(CAREER_OPS, m[1]);
+  if (!existsSync(path)) return null;
+  const content = readFileSync(path, 'utf-8');
+  const urlMatch = content.match(/\*\*URL:\*\*\s*(\S+)/);
+  return urlMatch ? urlMatch[1].trim() : null;
 }
 
 function extractReportNum(reportStr) {
@@ -212,6 +217,14 @@ for (const line of appLines) {
 
 console.log(`📊 Existing: ${existingApps.length} entries, max #${maxNum}`);
 
+// Build URL → existing app map for URL-exact dedup
+const existingUrlMap = new Map();
+for (const app of existingApps) {
+  const url = getReportUrl(app.report);
+  if (url) existingUrlMap.set(url, app);
+}
+console.log(`🔗 Indexed ${existingUrlMap.size} existing apps by URL`);
+
 // Read tracker additions
 if (!existsSync(ADDITIONS_DIR)) {
   console.log('No tracker-additions directory found.');
@@ -243,49 +256,21 @@ for (const file of tsvFiles) {
   const addition = parseTsvContent(content, file);
   if (!addition) { skipped++; continue; }
 
-  // Check for duplicate by:
-  // 1. Exact report number match
-  // 2. Company + role fuzzy match
-  const reportNum = extractReportNum(addition.report);
-  let duplicate = null;
-
-  if (reportNum) {
-    // Check if this report number already exists
-    duplicate = existingApps.find(app => {
-      const existingReportNum = extractReportNum(app.report);
-      return existingReportNum === reportNum;
-    });
-  }
-
-  if (!duplicate) {
-    // Exact entry number match
-    duplicate = existingApps.find(app => app.num === addition.num);
-  }
-
-  if (!duplicate) {
-    // Company + role fuzzy match
-    const normCompany = normalizeCompany(addition.company);
-    duplicate = existingApps.find(app => {
-      if (normalizeCompany(app.company) !== normCompany) return false;
-      return roleFuzzyMatch(addition.role, app.role);
-    });
-  }
+  // Dedup ONLY on exact URL match (read from each side's report file).
+  // Same URL = same posting → update in place. Different/missing URL → new entry.
+  const additionUrl = getReportUrl(addition.report);
+  const duplicate = additionUrl ? existingUrlMap.get(additionUrl) : null;
 
   if (duplicate) {
     const newScore = parseScore(addition.score);
     const oldScore = parseScore(duplicate.score);
-
-    if (newScore > oldScore) {
-      console.log(`🔄 Update: #${duplicate.num} ${addition.company} — ${addition.role} (${oldScore}→${newScore})`);
-      const lineIdx = appLines.indexOf(duplicate.raw);
-      if (lineIdx >= 0) {
-        const updatedLine = `| ${duplicate.num} | ${statusWithEmoji(duplicate.status)} | ${addition.date} | ${addition.company} | ${addition.role} | ${addition.score} | ${duplicate.pdf} | ${addition.report} | Re-eval ${addition.date} (${oldScore}→${newScore}). ${addition.notes} |`;
-        appLines[lineIdx] = updatedLine;
-        updated++;
-      }
-    } else {
-      console.log(`⏭️  Skip: ${addition.company} — ${addition.role} (existing #${duplicate.num} ${oldScore} >= new ${newScore})`);
-      skipped++;
+    console.log(`🔄 Update: #${duplicate.num} ${addition.company} — ${addition.role} (${oldScore}→${newScore}) [URL match]`);
+    const lineIdx = appLines.indexOf(duplicate.raw);
+    if (lineIdx >= 0) {
+      const newStatus = validateStatus(addition.status);
+      const updatedLine = `| ${duplicate.num} | ${statusWithEmoji(newStatus)} | ${addition.date} | ${addition.company} | ${addition.role} | ${addition.score} | ${duplicate.pdf} | ${addition.report} | Re-eval ${addition.date} (${oldScore}→${newScore}). ${addition.notes} |`;
+      appLines[lineIdx] = updatedLine;
+      updated++;
     }
   } else {
     // New entry — use the number from the TSV
