@@ -28,22 +28,7 @@ There are two layers. Read `DATA_CONTRACT.md` for the full list.
 
 ## Update Check
 
-On the first message of each session, run the update checker silently:
-
-```bash
-node update-system.mjs check
-```
-
-Parse the JSON output:
-- `{"status": "update-available", "local": "1.0.0", "remote": "1.1.0", "changelog": "..."}` → tell the user:
-  > "career-ops update available (v{local} → v{remote}). Your data (CV, profile, tracker, reports) will NOT be touched. Want me to update?"
-  If yes → run `node update-system.mjs apply`. If no → run `node update-system.mjs dismiss`.
-- `{"status": "up-to-date"}` → say nothing
-- `{"status": "dismissed"}` → say nothing
-- `{"status": "offline"}` → say nothing
-
-The user can also say "check for updates" or "update career-ops" at any time to force a check.
-To rollback: `node update-system.mjs rollback`
+DISABLED. Eric has opted out of upstream updates from the santifer/career-ops fork — this repo is his own. Do NOT run `node update-system.mjs check`, do NOT mention available upstream updates, and do NOT suggest running `apply`. Only run update commands if the user explicitly asks.
 
 ## What is career-ops
 

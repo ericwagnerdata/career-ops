@@ -37,6 +37,20 @@ Read `portals.yml` which contains:
 
 For companies on Greenhouse, the JSON API (`boards-api.greenhouse.io/v1/boards/{slug}/jobs`) returns clean structured data. Use as a quick complement to Level 1 — faster than Playwright but only works with Greenhouse.
 
+### Level 2b — Workday API (SUPPLEMENTARY)
+
+For companies on Workday (any `*.myworkdayjobs.com` host), use the Workday CXS jobs endpoint. It is a POST request with a JSON body, so use Bash + curl rather than WebFetch.
+
+```bash
+curl -s -X POST 'https://{host}/wday/cxs/{tenant}/{site}/jobs' \
+  -H 'Content-Type: application/json' \
+  -d '{"appliedFacets":{},"limit":50,"offset":0,"searchText":""}'
+```
+
+Response is JSON with a `jobPostings` array. Each item has `title`, `externalPath` (append to `https://{host}` for the public URL), `locationsText`, and `postedOn`.
+
+For tracked_companies entries with `scan_method: workday`, read `workday_host`, `workday_tenant`, and `workday_site` from the entry. Filter remote-US in the same way as other levels.
+
 ### Level 3 — WebSearch queries (BROAD DISCOVERY)
 
 The `search_queries` with `site:` filters cover portals broadly (all Ashby, all Greenhouse, etc.). Useful for discovering NEW companies not yet in `tracked_companies`, but results may be stale.

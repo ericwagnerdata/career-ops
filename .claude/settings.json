@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node verify-pipeline.mjs)",
+      "Bash(node test-all.mjs)",
+      "Bash(node cv-sync-check.mjs)",
+      "Bash(node normalize-statuses.mjs)",
+      "Bash(node dedup-tracker.mjs)",
+      "Bash(node merge-tracker.mjs)"
+    ]
+  }
+}
