@@ -1,5 +1,11 @@
 {
   "[markdown]": {
     "editor.wordWrap": "on"
-  }
+  },
+  "markdown-pdf.margin.top": "0.15in",
+  "markdown-pdf.margin.bottom": "0.25in",
+  "markdown-pdf.margin.left": "0.4in",
+  "markdown-pdf.margin.right": "0.4in",
+  "markdown-pdf.displayHeaderFooter": false,
+  "markdown-pdf.printBackground": true
 }
